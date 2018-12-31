@@ -1,5 +1,14 @@
 // Dependencies
 var express = require("express");
+require('dotenv').config();
+// https://www.npmjs.com/package/dotenv
+
+const db = require('db')
+db.connect({
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS
+})
 
 // tell node we are creating an "express" server
 var app = express();

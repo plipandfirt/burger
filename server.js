@@ -1,44 +1,30 @@
 // Dependencies
 var express = require("express");
-require('dotenv').config();
-// https://www.npmjs.com/package/dotenv
 
-const db = require('db')
-db.connect({
-  host: process.env.DB_HOST,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS
-})
-
-// tell node we are creating an "express" server
-var app = express();
-
-// set initial port
 var PORT = process.env.PORT || 8080;
 
-// tell express app to handle data parsing
-app.use(express.urlencoded({ extended: true}));
+var app = express();
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+// Parse application body as JSON
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// server maps
-require("")(app);
-require("")(app);
+// Set Handlebars.
+var exphbs = require("express-handlebars");
 
-// Routes
-// =============================================================
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, ""));
-  });
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller");
 
-  app.get("", function(req, res) {
-    res.sendFile(path.join(__dirname, ""));
-  });
+app.use(routes);
 
-  app.get("", function(req, res) {
-    res.sendFile(path.join(__dirname, ""));
-  });
-// Listener - starts the server
+// Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
-    console.log("App is listening on PORT: " + PORT);
+  // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
 });

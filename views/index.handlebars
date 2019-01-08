@@ -1,0 +1,71 @@
+<div class="section" id="burger-menu">
+    <div class="container"></div>
+
+    {{!-- Section 1 --}}
+    <div class="jumbotron"></div>
+    <div class="row">
+        <div class="col s12 m12 l12 center-align">
+            <h1 class="header title-hdr"> Eat-Da-Burger </h1>
+        </div>
+    </div>
+
+    {{!-- Section 2 --}}
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card horizontal z-depth-2">
+                <div class="card-content center-align">
+                    <form class="createburger">
+                        <h3>Add your customer burger to the list!!!</h3>
+                        <input type="text" name="burger-name" placeholder="ex. Cheeseburgah, Cheeseburgah, Cheeseburgah"
+                            size="80">
+                        <input id="add-btn" type="submit" class="btn waves-effect waves-light" value="Order Burger">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- section 3 --}}
+    <div class="row">
+        {{!-- Burgers already created list --}}
+        <div class="col s12 m12 l6">
+            <div class="card burgerlist z-depth-2">
+                <h3 class="header text_b center-align">Burgers already created...</h3>
+                <table class="striped">
+                    {{#each burgers}}
+                    {{#unless this.devoured}}
+                    <tr>
+                        <td>
+                            <p>{{this.burger_name}}</p>
+                        </td>
+                        <td><button class="eat-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-utensils"></i>
+                                Order </button></td>
+                        <td><button class="delete-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-trash-alt"></i></button></td>
+                    </tr>
+                    {{/unless}}
+                    {{/each}}
+                </table>
+            </div>
+        </div>
+
+        {{!-- Devoured burgers list --}}
+        <div class="col s12 m12 l6">
+            <div class="card burgerlist z-depth-2">
+                <h3 class="header text_b center-align">List of Devoured Burgers</h3>
+                <table class="striped">
+                    {{#each burgers}}
+                    {{#if this.devoured}}
+                    <tr>
+                        <td>
+                            <p>{{this.burger_name}}</p>
+                        </td>
+                        <td><button class="delete-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-trash-alt"></i></button></td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

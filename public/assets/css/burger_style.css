@@ -1,0 +1,25 @@
+body {
+  background-color: #ffe082;
+  /* background-image: url('../img/cheeseburger.PNG'); */
+  color: indianred;
+}
+
+.burgerlist,
+.createburger {
+  background-color: white;
+  color: black;
+  padding: 12px;
+}
+
+h1, h2, h3, p {
+  font-family: sans-serif; 
+  color : indianred;
+}
+
+td {
+  font-family: sans-serif; 
+}
+
+#title-hdr {
+  font-size:3vw;
+}

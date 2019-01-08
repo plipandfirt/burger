@@ -12,4 +12,4 @@ In this assignment, we created a burger logger with MySQL, Node, Express, Handle
 
 * The app will store every burger in a database, whether devoured or not.
 
-* Check out the app in [GitHUB](https://plipandfirt.github.io/burger/) or [Heroku](https://ancient-thicket-71419.herokuapp.com/).
+* Check out the app in [Heroku](https://ancient-thicket-71419.herokuapp.com/) or code in [GitHUB](https://github.com/plipandfirt/burger).

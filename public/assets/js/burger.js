@@ -6,7 +6,7 @@ $(function () {
         }
 
         // Send the PUT request.
-        $.ajax("/api/burgers/" + id, {
+        $.ajax("/api/burgers/" + burger.id, {
             type: "PUT",
             data: burger
         }).then(
@@ -46,7 +46,7 @@ $(function () {
         }
 
         // Send the DELETE request.
-        $.ajax("/api/burgers/" + id, {
+        $.ajax("/api/burgers/" + burger.id, {
             type: "DELETE"
         }).then(
             function () {

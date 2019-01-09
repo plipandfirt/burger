@@ -1,7 +1,8 @@
 body {
   background-color: #ffe082;
   /* background-image: url('../img/cheeseburger.PNG'); */
-  color: indianred;
+  color: black;
+  background-size: cover;
 }
 
 .burgerlist,
@@ -9,17 +10,20 @@ body {
   background-color: white;
   color: black;
   padding: 12px;
+  padding: 1%;
 }
 
 h1, h2, h3, p {
   font-family: sans-serif; 
-  color : indianred;
+  color : black;
 }
 
 td {
-  font-family: sans-serif; 
+  font-family: sans-serif;
+  margin: 0.5% 0% 0.5% 0%;
 }
 
 #title-hdr {
+    text-align: center;
   font-size:3vw;
 }
